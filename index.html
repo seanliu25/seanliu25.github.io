@@ -1,50 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset = "UTF-8">
-        <title> About Me </title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <!-- This is the header of the webpage-->
-        <header> 
-             <!-- My name: -->
-            <h1>
-                Shangwei Liu
-            </h1>
-            <!-- My description: -->
-            <p> 
-                <em>Shangwei Liu's online main page.</em>
-            </p>
-        </header>
-        <!-- Navgation starts here: -->
-        <nav>
-            <ul>
-                <li>
-                    <a href = "index.html"> about me </a>
-                </li>
-                <li>
-                    <a href = "work-experience.html"> work-experience </a>
-                </li>
-                <li>
-                    <a href = "projects.html"> projects </a>
-                </li>
-                <li>
-                    <a href = "contact.html"> contact </a>
-                </li>
-                <li>
-                    <a href = "assignments.html"> assignment </a>
-                </li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shangwei Liu | Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="page-wrapper">
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Sean Liu</div>
+
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="work-experience.html">Experience</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-        </nav>
-        <main>
-            <h1>About me</h1>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Hello!</h1>
+        <p>
+            I am a Master's student at The University of Chicago building scalable software,
+            intelligent systems, and full-stack applications.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="projects.html" class="btn primary">View Projects</a>
+            <a href="contact.html" class="btn secondary">Contact Me</a>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <section id="about">
+            <h2>About Me</h2>
             <p>
-                I'm a senior student at Boston University, majoring in Computer Science. I hope I can learn some great tools and knowledge about data science this year!
+                I am a developer driven by the intersection of <strong>software engineering</strong> and <strong>intelligent systems</strong>. 
+                With a deep-seated love for <strong>iOS development</strong> and <strong>UI/UX design</strong>, I strive to create 
+                mobile experiences that are not only high-performing but also visually captivating and intuitive for the end-user.
             </p>
-        </main>
-        <footer>
-            <p>&copy; 2024 Shangwei Liu. Boston University. ALl rights reserved</p>
-        </footer>
-    </body>
+            <p style="margin-top: 15px;">
+                Beyond building my own platforms, I am an active advocate for collaborative software, having 
+                contributed to several <strong>open-source projects on GitHub</strong>. I believe that the best 
+                code is grown through community and rigorous problem-solving.
+            </p>
+            
+            <div class="hobbies-container" style="margin-top: 25px;">
+                <p style="margin-bottom: 12px; font-weight: 600; color: rgba(255,255,255,0.9);">When I'm not coding, you can find me:</p>
+                <div class="skills">
+                    <span class="hobby-tag">⛷️ Skiing</span>
+                    <span class="hobby-tag">🎾 Tennis</span>
+                    <span class="hobby-tag">⛳ Golf</span>
+                    <span class="hobby-tag">🎬 Movies</span>
+                </div>
+            </div>
+        </section>
+    
+       
+    </div>
+</div>
+
+<footer>
+    <p>&copy; <span id="year"></span> Shangwei Liu. All rights reserved.</p>
+</footer>
+
+<script>
+    // Set dynamic year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Navigation toggle logic
+    const toggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        toggle.classList.toggle('open');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            toggle.classList.remove('open');
+        });
+    });
+</script>
+
+</body>
 </html>

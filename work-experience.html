@@ -3,18 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignments</title>
+    <title>Journey | Shangwei Liu</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header>
-        <h1>Shangwei Liu's Assignments Page</h1>
+<div class="page-wrapper">
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Sean Liu</div>
+
+            <button class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="work-experience.html" class="active">Experience</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero" style="padding: 80px 20px 40px;">
+        <h1>Professional Journey</h1>
+        <p>My academic foundation and industry experience.</p>
     </header>
-    <section>
-        <h2>N/A</h2>
-        <p>N/A</p>
-        <a href="">No Link</a>
-    </section>  
+
+    <div class="container">
+
+        <section id="work">
+            <h2 class="section-divider">Work Experience</h2>
+            
+            <section class="experience-item">
+                <div class="experience-header">
+                    <h2>
+                        <span class="job-title">Full Stack Software Engineer Intern</span> 
+                    </h2>
+                    <h4 class="job-date">(Jun 2024 - Aug 2024)</h4>
+                    <h3 class="company-name">Paranovus Entertainment | Los Angeles, CA</h3>
+                </div>
+                
+                <ul class="experience-list">
+                    <li>Architected a production-grade conversational platform handling <strong>2k+ daily active users</strong> using <strong>Next.js 14</strong>.</li>
+                    <li>Engineered a secure <strong>OAuth 2.0 / JWT</strong> authentication pipeline with role-based access control (RBAC).</li>
+                    <li>Orchestrated multi-turn AI interactions by integrating <strong>OpenAI APIs</strong> with optimized context management.</li>
+                    <li>Optimized backend performance refactoring <strong>MongoDB aggregation pipelines</strong>, reducing latency by <strong>68%</strong>.</li>
+                </ul>
+
+                <div class="skills" style="margin-top: 20px;">
+                    <span>Next.js 14</span><span>OpenAI API</span><span>MongoDB</span><span>OAuth 2.0</span><span>JWT</span><span>Tailwind CSS</span>
+                </div>
+            </section>
+        </section>
+
+        <section id="education" style="margin-top: 80px;">
+            <h2 class="section-divider">Education</h2>
+
+            <section class="experience-item">
+                <div class="experience-header">
+                    <h2>
+                        <span class="job-title">University of Chicago</span> 
+                        <span class="job-date">(Sep 2025 - Dec 2026)</span>
+                    </h2>
+                    <h3 class="company-name">M.S. Computer Science | Chicago, IL</h3>
+                </div>
+                <p class="edu-details">Focusing on Distributed Systems, Cloud Computing, and Intelligent Systems.</p>
+            </section>
+
+            <section class="experience-item">
+                <div class="experience-header">
+                    <h2>
+                        <span class="job-title">Boston University</span> 
+                        <span class="job-date">(Aug 2022 - May 2025)</span>
+                    </h2>
+                    <h3 class="company-name">B.A. Computer Science | Boston, MA</h3>
+                </div>
+            </section>
+
+            <section class="experience-item">
+                <div class="experience-header">
+                    <h2>
+                        <span class="job-title">Sacred Heart High School</span> 
+                        <span class="job-date">(2016 - 2020)</span>
+                    </h2>
+                    <h3 class="company-name">High School Diploma | NewYork, NY</h3>
+                </div>
+            </section>
+        </section>
+
+
+         <section id="skills">
+            <h3 class="section-divider">Technical Skills</h3>
+            
+            <div class="skills-group">
+                <h3>Languages</h3>
+                <div class="skills">
+                    <span>Python</span><span>Swift (iOS)</span><span>JavaScript/TypeScript</span>
+                    <span>Go</span><span>Java</span><span>C++</span><span>SQL</span>
+                </div>
+            </div>
+
+            <div class="skills-group" style="margin-top: 25px;">
+                <h3>Frontend</h3>
+                <div class="skills">
+                    <span>React</span><span>Next.js</span><span>SwiftUI</span>
+                    <span>UIKit</span><span>Tailwind CSS</span><span>HTML5/CSS3</span>
+                </div>
+            </div>
+
+            <div class="skills-group" style="margin-top: 25px;">
+                <h3>Backend & Data</h3>
+                <div class="skills">
+                    <span>Node.js</span><span>FastAPI</span><span>PostgreSQL</span>
+                    <span>MongoDB</span><span>Redis</span><span>Core Data</span><span>GraphQL</span>
+                </div>
+            </div>
+
+            <div class="skills-group" style="margin-top: 25px;">
+                <h3>Infrastructure & Tools</h3>
+                <div class="skills">
+                    <span>AWS (EC2, Lambda)</span><span>Docker</span><span>Git</span>
+                    <span>CI/CD (GitHub Actions)</span><span>Linux/Unix</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+<footer>
+    <p>&copy; <span id="year"></span> Shangwei Liu. All rights reserved.</p>
+</footer>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const toggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        toggle.classList.toggle('open');
+    });
+</script>
+
 </body>
 </html>

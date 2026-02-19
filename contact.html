@@ -3,18 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignments</title>
+    <title>Shangwei Liu | Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header>
-        <h1>Shangwei Liu's Assignments Page</h1>
+<div class="page-wrapper">
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Sean Liu</div>
+
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="work-experience.html">Experience</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Want to Chat?</h1>
+        <p>
+            Feel free to contact me with the information listed below! I look forward to learn from you!
+        </p>
+
+        <div class="hero-buttons">
+            <a href="index.html" class="btn primary">Home</a>
+            <a href="https://github.com/seanliu25" target="_blank" class="btn secondary">GitHub</a>
+        </div>
     </header>
-    <section>
-        <h2>Contact Information</h2>
-        <p>My bu email: swliu@bu.edu </p>
-        <a href="index.html">My main page</a>
-    </section>
+
+    <div class="container">
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-grid">
+                <a href="mailto:swliu@uchicago.edu" class="contact-card">
+                    <span class="contact-label">Email</span>
+                    <span class="contact-value">swliu@uchicago.edu</span>
+                </a>
+                <a href="https://github.com/seanliu25" target="_blank" class="contact-card">
+                    <span class="contact-label">GitHub</span>
+                    <span class="contact-value">github.com/seanliu25</span>
+                </a>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+<footer>
+    <p>&copy; <span id="year"></span> Shangwei Liu. All rights reserved.</p>
+</footer>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const toggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        toggle.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            toggle.classList.remove('open');
+        });
+    });
+</script>
+
 </body>
 </html>
