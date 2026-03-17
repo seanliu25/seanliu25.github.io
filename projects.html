@@ -7,7 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="style-v2.css" />
 </head>
-
 <body>
 <div class="page-wrapper">
 
@@ -33,38 +32,41 @@
 
   <div class="container">
 
+    <!-- LedgerLens -->
     <section class="project-card">
       <div class="project-header">
-        <h2>Financial Data Engine</h2>
+        <h2>LedgerLens</h2>
         <span style="font-size:0.82rem; color:var(--text-secondary); font-style:italic;">Aug 2023 – May 2024</span>
       </div>
-      <p class="project-subtitle">Full-Stack Data Pipeline &amp; Visualization Platform</p>
+      <p class="project-subtitle">ML-Driven Transaction Classifier &nbsp;·&nbsp; Data Engineering &amp; Machine Learning</p>
       <ul class="project-list">
-        <li>Developed a scalable analytics application processing high-volume datasets for <strong>real-time budgeting insights</strong>.</li>
-        <li>Migrated data persistence to <strong>PostgreSQL</strong> via <strong>Docker</strong> to support complex relational queries and concurrent operations.</li>
-        <li>Implemented an ML pipeline using <strong>scikit-learn</strong> for transaction classification, achieving <strong>92% accuracy</strong>.</li>
-        <li>Constructed robust RESTful APIs with <strong>FastAPI</strong> consumed by a responsive <strong>Next.js</strong> frontend.</li>
+        <li>Developed a financial tracking application using <strong>FastAPI</strong> and <strong>Pydantic</strong>, implementing strict type-hinting and schema validation for multi-format CSV transaction imports.</li>
+        <li>Architected the data storage layer with <strong>PostgreSQL</strong> to leverage relational integrity and row-level locking, optimizing query execution for concurrent user sessions and transactional consistency.</li>
+        <li>Built a classification engine using <strong>scikit-learn</strong> and <strong>pandas</strong>; utilized a <strong>RandomForestClassifier</strong> for labeling and implemented Z-score–based thresholding for statistical anomaly detection.</li>
+        <li>Orchestrated the application environment using <strong>Docker Compose</strong>, managing isolated containers for the web server, database, and persistent data backup volume.</li>
       </ul>
       <div class="skills" style="margin-top:20px;">
-        <span>Python</span><span>FastAPI</span><span>Next.js</span><span>PostgreSQL</span><span>Docker</span><span>scikit-learn</span>
+        <span>Python</span><span>FastAPI</span><span>Pydantic</span><span>PostgreSQL</span>
+        <span>scikit-learn</span><span>pandas</span><span>Docker Compose</span>
       </div>
     </section>
 
+    <!-- SyncSpace -->
     <section class="project-card">
       <div class="project-header">
         <h2>SyncSpace</h2>
-        <span style="font-size:0.82rem; color:var(--text-secondary); font-style:italic;">Oct 2025 – Jan 2026</span>
+        <span style="font-size:0.82rem; color:var(--text-secondary); font-style:italic;">May 2025 – Nov 2025</span>
       </div>
-      <p class="project-subtitle">Real-Time Collaborative Workspace (Full-Stack iOS)</p>
+      <p class="project-subtitle">Real-Time Distributed Task Engine &nbsp;·&nbsp; iOS &amp; Distributed Systems</p>
       <ul class="project-list">
-        <li>Engineered a high-performance collaboration platform using <strong>WebSockets (Socket.io)</strong> for live data synchronization.</li>
-        <li>Built a resilient <strong>Node.js</strong> backend deployed on <strong>AWS EC2</strong> with Nginx reverse proxying.</li>
-        <li>Designed a <strong>SwiftUI</strong> mobile UI using the <strong>MVVM-C</strong> pattern and Combine for async event streams.</li>
-        <li>Implemented an <strong>"Offline-First" architecture</strong> using <strong>Core Data</strong> with a custom sync engine for conflict resolution.</li>
-        <li>Integrated <strong>APNs</strong> to deliver instant updates on task assignments and team activities.</li>
+        <li>Deployed a <strong>Node.js</strong> backend to <strong>AWS EC2</strong>, configuring <strong>Nginx</strong> as a reverse proxy for SSL/TLS termination and managing secure API traffic via high-performance server-side routing.</li>
+        <li>Engineered a real-time synchronization layer using <strong>WebSockets</strong>, managing active connection states and broadcast events to enable low-latency task updates across distributed clients.</li>
+        <li>Developed an "Offline-First" persistence strategy with <strong>Core Data</strong>, utilizing a <strong>timestamp-based merge logic</strong> to reconcile concurrent local edits with the remote <strong>PostgreSQL</strong> database.</li>
+        <li>Built the reactive mobile frontend using <strong>SwiftUI</strong> and <strong>Combine</strong>, ensuring thread-safe UI updates and strict separation of business logic via the <strong>MVVM-C</strong> architecture.</li>
       </ul>
       <div class="skills" style="margin-top:20px;">
-        <span>SwiftUI</span><span>Node.js</span><span>AWS EC2</span><span>WebSockets</span><span>Core Data</span><span>MVVM-C</span>
+        <span>SwiftUI</span><span>Combine</span><span>MVVM-C</span><span>Node.js</span>
+        <span>AWS EC2</span><span>Nginx</span><span>WebSockets</span><span>Core Data</span><span>PostgreSQL</span>
       </div>
     </section>
 

@@ -27,61 +27,60 @@
     </div>
   </nav>
 
-  <!-- ── Side nav dots (circle → pill capsule on hover/active) ── -->
+  <!-- ── Side nav dots ── -->
   <nav class="fp-dots" aria-label="Section navigation">
     <button class="fp-dot active" data-index="0" aria-label="Hero"></button>
     <button class="fp-dot"        data-index="1" aria-label="About"></button>
+    <button class="fp-dot"        data-index="2" aria-label="Hobbies"></button>
+    <button class="fp-dot"        data-index="3" aria-label="Travel"></button>
   </nav>
 
-  <!-- ── Scroll container ── -->
   <div class="fp-scroll" id="fp-scroll">
 
-    <!-- ─ Scene 0: Hero ─ -->
+    <!-- ════ Scene 0 — Hero ════ -->
     <section class="fp-section fp-hero" data-section="0">
-
-      <h1>Hello, I'm Sean</h1>
-      <p>Master's student at The University of Chicago building at the intersection of software engineering and intelligent systems.</p>
+      <h1>Hello, I'm Sean.</h1>
+      <p>M.S. Computer Science at The University of Chicago — building at the intersection of distributed systems, intelligent software, and beautiful mobile experiences.</p>
       <div class="hero-buttons">
         <a href="projects.html" class="btn primary">View Projects</a>
         <a href="contact.html"  class="btn secondary">Contact Me</a>
       </div>
 
-      <!-- Clickable arrow → scrolls to next scene -->
+      <!-- Scroll hint: hero only -->
       <div class="scroll-hint">
-        <button class="scroll-btn" id="scroll-btn" aria-label="Scroll to next section">
+        <button class="scroll-btn" data-scroll-next aria-label="Scroll to About">
           <span>Scroll</span>
-          <!-- Down arrow SVG (clean, no drift) -->
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 5v14M5 12l7 7 7-7"/>
           </svg>
         </button>
       </div>
-
     </section>
 
-    <!-- ─ Scene 1: About ─ -->
+    <!-- ════ Scene 1 — About ════ -->
     <section class="fp-section" data-section="1">
       <div class="fp-about-inner">
 
-        <!-- Left: bio (delay-0) -->
+        <!-- Left: bio -->
         <div class="fp-about-body">
           <p class="fp-section-label">About Me</p>
           <h2 class="fp-about-title">Developer.<br>Designer.<br>Builder.</h2>
-          <p>I'm driven by the intersection of <strong>software engineering</strong> and <strong>intelligent systems</strong>. With a deep love for <strong>iOS development</strong> and <strong>UI/UX design</strong>, I strive to create mobile experiences that are high-performing, visually captivating, and intuitive.</p>
-          <p style="margin-top:12px;">I'm an active advocate for collaborative software, having contributed to several <strong>open-source projects on GitHub</strong>. I believe the best code is grown through community and rigorous problem-solving.</p>
-          <div style="margin-top:24px;">
-            <p class="fp-hobbies-label">When I'm not coding</p>
-            <div class="skills" style="margin-top:10px;">
+          <p>I'm driven by the intersection of <strong>software engineering</strong> and <strong>intelligent systems</strong>. Currently pursuing my M.S. at the University of Chicago with a <strong>GPA of 3.90/4.0</strong>, focusing on Distributed Systems, Cloud Computing, and iOS Development.</p>
+          <p style="margin-top:14px;">I love building high-performance iOS apps and full-stack systems, and I'm an active contributor to <strong>open-source projects on GitHub</strong>. My work spans mobile UIs to distributed backends.</p>
+          <div style="margin-top:26px;">
+            <p class="fp-hobbies-label">When I'm not coding — <a class="fp-hobbies-more" data-scroll-to="2">see more ↓</a></p>
+            <!-- <div class="skills" style="margin-top:12px;">
               <span class="hobby-tag">⛷️ Skiing</span>
               <span class="hobby-tag">🎾 Tennis</span>
               <span class="hobby-tag">⛳ Golf</span>
               <span class="hobby-tag">🎬 Movies</span>
-            </div>
+              <span class="hobby-tag">✈️ Travel</span>
+            </div> -->
           </div>
         </div>
 
-        <!-- Right: quick links (delay-75) -->
+        <!-- Right: quick links -->
         <div class="fp-about-right">
           <p class="fp-section-label">Explore</p>
           <div class="fp-divider"></div>
@@ -116,10 +115,119 @@
                 <span class="fp-quick-link-label">Open Source</span>
                 <span class="fp-quick-link-title">GitHub Profile</span>
               </span>
-              <span class="fp-quick-link-arrow">↗</span>
+              <span class="fp-quick-link-arrow">→</span>
             </a>
           </div>
         </div>
+
+      </div>
+      <!-- No scroll hint here -->
+    </section>
+
+    <!-- ════ Scene 2 — Hobbies bento ════ -->
+    <section class="fp-section fp-hobbies-scene" data-section="2">
+      <div class="fp-hobbies-wrap">
+
+        <div class="fp-hobbies-header">
+          <p class="fp-section-label">Life Beyond Code</p>
+          <h2 class="fp-hobbies-title">What I Do<br>for Fun</h2>
+        </div>
+
+        <div class="fp-bento">
+          <div class="fp-hobby-card fp-hobby-card--ski">
+            <div class="fp-hobby-img">
+              <!-- REPLACE: <img src="photos/skiing.jpg" alt="Skiing"> -->
+              <div class="fp-hobby-img-placeholder">⛷️</div>
+            </div>
+            <div class="fp-hobby-info">
+              <span class="fp-hobby-name">Skiing</span>
+              <span class="fp-hobby-desc">Carving fresh powder on alpine runs.</span>
+            </div>
+          </div>
+
+          <div class="fp-hobby-card fp-hobby-card--tennis">
+            <div class="fp-hobby-img">
+              <!-- REPLACE: <img src="photos/tennis.jpg" alt="Tennis"> -->
+              <div class="fp-hobby-img-placeholder">🎾</div>
+            </div>
+            <div class="fp-hobby-info">
+              <span class="fp-hobby-name">Tennis</span>
+              <span class="fp-hobby-desc">Competing on clay and hard courts.</span>
+            </div>
+          </div>
+
+          <div class="fp-hobby-card fp-hobby-card--golf">
+            <div class="fp-hobby-img">
+              <!-- REPLACE: <img src="photos/golf.jpg" alt="Golf"> -->
+              <div class="fp-hobby-img-placeholder">⛳</div>
+            </div>
+            <div class="fp-hobby-info">
+              <span class="fp-hobby-name">Golf</span>
+              <span class="fp-hobby-desc">Weekend rounds and walking the fairways.</span>
+            </div>
+          </div>
+
+          <div class="fp-hobby-card fp-hobby-card--travel fp-hobby-card--wide">
+            <div class="fp-hobby-img">
+              <!-- REPLACE: <img src="photos/travel-featured.jpg" alt="Travel"> -->
+              <div class="fp-hobby-img-placeholder">✈️</div>
+            </div>
+            <div class="fp-hobby-info">
+              <span class="fp-hobby-name">Travel</span>
+              <span class="fp-hobby-desc">Exploring new cultures, cities, and cuisines — see my adventures below.</span>
+            </div>
+          </div>
+
+          <div class="fp-hobby-card fp-hobby-card--movies">
+            <div class="fp-hobby-img">
+              <!-- REPLACE: <img src="photos/movies.jpg" alt="Movies"> -->
+              <div class="fp-hobby-img-placeholder">🎬</div>
+            </div>
+            <div class="fp-hobby-info">
+              <span class="fp-hobby-name">Movies</span>
+              <span class="fp-hobby-desc">A24 films and classic cinema.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ Scene 3 — Travel gallery ════ -->
+    <section class="fp-section fp-travel-scene" data-section="3">
+      <div class="fp-travel-wrap">
+
+        <div class="fp-travel-copy">
+          <p class="fp-section-label">Adventures</p>
+          <h2 class="fp-travel-title">Around<br>the World</h2>
+          <p class="fp-travel-desc">From mountain slopes in the Alps to the neon streets of Tokyo — travel is how I reset, get inspired, and collect stories.</p>
+          <p class="fp-travel-desc" style="margin-top:12px;">Every trip teaches me something a textbook can't.</p>
+          <div class="fp-travel-stats">
+            <div class="fp-stat">
+              <span class="fp-stat-num">5+</span>
+              <span class="fp-stat-label">Countries</span>
+            </div>
+            <div class="fp-stat">
+              <span class="fp-stat-num">3</span>
+              <span class="fp-stat-label">Continents</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fp-travel-mosaic">
+          
+          <div class="fp-photo fp-photo--tall">
+            <img src="photos/travel-1.jpeg" alt="Travel adventure 1">
+          </div>
+          
+          <div class="fp-photo">
+            <img src="photos/travel-2.jpg" alt="Travel adventure 2">
+          </div>
+          
+          <div class="fp-photo">
+            <img src="photos/travel-3.png" alt="Travel adventure 3">
+          </div>
+          
+          </div>
 
       </div>
     </section>
@@ -127,6 +235,5 @@
   </div><!-- /fp-scroll -->
 
   <script src="index-fp.js"></script>
-
 </body>
 </html>

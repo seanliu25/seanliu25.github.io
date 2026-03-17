@@ -1,5 +1,3 @@
-/* index-fp.js  —  Full-page scroll interactions */
-
 // ── Mobile nav toggle ──
 const toggle   = document.getElementById('menu-toggle');
 const navLinks = document.getElementById('nav-links');
@@ -28,6 +26,13 @@ function activeIndex() {
 }
 
 
+// ── Navigate to a scene by index ──
+function goTo(idx) {
+  const clamped = Math.max(0, Math.min(idx, sections.length - 1));
+  scroller.scrollTo({ top: clamped * scroller.clientHeight, behavior: 'smooth' });
+}
+
+
 // ── Sync nav dots ──
 function syncDots(i) {
   dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
@@ -42,26 +47,23 @@ scroller.addEventListener('scroll', () => {
 });
 
 
-// ── Navigate to a scene by index ──
-function goTo(idx) {
-  scroller.scrollTo({ top: idx * scroller.clientHeight, behavior: 'smooth' });
-}
-
-
 // ── Dot click → jump to scene ──
 dots.forEach(dot => {
   dot.addEventListener('click', () => goTo(parseInt(dot.dataset.index)));
 });
 
+//    Used by all three scroll-hint arrows.
+document.querySelectorAll('[data-scroll-next]').forEach(btn => {
+  btn.addEventListener('click', () => goTo(activeIndex() + 1));
+});
 
-// ── Scroll-hint arrow → advance to next scene ──
-const scrollBtn = document.getElementById('scroll-btn');
-if (scrollBtn) {
-  scrollBtn.addEventListener('click', () => {
-    const next = activeIndex() + 1;
-    if (next < sections.length) goTo(next);
+//    Used by the "see more ↓" link in the hobby label row.
+document.querySelectorAll('[data-scroll-to]').forEach(el => {
+  el.addEventListener('click', e => {
+    e.preventDefault();
+    goTo(parseInt(el.dataset.scrollTo));
   });
-}
+});
 
 
 // ── Keyboard arrow / page navigation ──

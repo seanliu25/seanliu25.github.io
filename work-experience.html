@@ -7,7 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="style-v2.css" />
 </head>
-
 <body>
 <div class="page-wrapper">
 
@@ -33,31 +32,31 @@
 
   <div class="container">
 
-    <!-- ── Work Experience ── -->
+    <!-- Work Experience -->
     <section id="work">
       <h2 class="section-divider">Work Experience</h2>
 
       <section class="experience-item">
         <div class="experience-header">
-          <h2>
-            <span class="job-title">Full Stack Software Engineer Intern</span>
-          </h2>
+          <h2><span class="job-title">Full Stack Software Engineer Intern</span></h2>
           <h4 class="job-date">Jun 2024 – Aug 2024</h4>
           <h3 class="company-name">Paranovus Entertainment &nbsp;·&nbsp; Los Angeles, CA</h3>
         </div>
         <ul class="experience-list">
-          <li>Architected a production-grade conversational platform handling <strong>2k+ daily active users</strong> using <strong>Next.js 14</strong>.</li>
-          <li>Engineered a secure <strong>OAuth 2.0 / JWT</strong> authentication pipeline with role-based access control (RBAC).</li>
-          <li>Orchestrated multi-turn AI interactions by integrating <strong>OpenAI APIs</strong> with optimized context management.</li>
-          <li>Optimized backend performance refactoring <strong>MongoDB aggregation pipelines</strong>, reducing latency by <strong>68%</strong>.</li>
+          <li>Developed a modular <strong>RESTful API</strong> architecture using <strong>Next.js 14</strong> server-side handlers, implementing custom middleware for request payload transformation and schema-strict data mapping between the UI and MongoDB.</li>
+          <li>Engineered a secure identity layer using <strong>OAuth 2.0 and JWT</strong>, implementing a <strong>Role-Based Access Control (RBAC)</strong> system to manage session persistence and enforce granular permissioning across internal API routes.</li>
+          <li>Designed a server-side caching strategy using <strong>Redis</strong> with a TTL-based invalidation schema to serve <strong>800 req/sec</strong> from cache, reducing API token overhead by <strong>15%</strong> and eliminating latency for redundant queries.</li>
+          <li>Optimized <strong>MongoDB</strong> data access patterns by analyzing query execution plans; refactored aggregation pipelines and implemented compound indexes to minimize document scans and increase write throughput.</li>
+          <li>Orchestrated containerized environments using <strong>Docker and Docker Compose</strong>, automating deployment workflows via <strong>GitHub Actions</strong> for consistent environment parity and reproducible builds.</li>
         </ul>
         <div class="skills" style="margin-top:18px;">
-          <span>Next.js 14</span><span>OpenAI API</span><span>MongoDB</span><span>OAuth 2.0</span><span>JWT</span><span>Tailwind CSS</span>
+          <span>Next.js 14</span><span>OAuth 2.0</span><span>JWT</span><span>Redis</span>
+          <span>MongoDB</span><span>Docker</span><span>GitHub Actions</span><span>Tailwind CSS</span>
         </div>
       </section>
     </section>
 
-    <!-- ── Education ── -->
+    <!-- Education -->
     <section id="education" style="margin-top:64px;">
       <h2 class="section-divider">Education</h2>
 
@@ -65,9 +64,9 @@
         <div class="experience-header">
           <h2><span class="job-title">University of Chicago</span></h2>
           <h4 class="job-date">Sep 2025 – Dec 2026</h4>
-          <h3 class="company-name">M.S. Computer Science &nbsp;·&nbsp; Chicago, IL</h3>
+          <h3 class="company-name">M.S. Computer Science &nbsp;·&nbsp; Chicago, IL &nbsp;·&nbsp; GPA 3.90 / 4.0</h3>
         </div>
-        <p class="edu-details">Focusing on Distributed Systems, Cloud Computing, and Intelligent Systems.</p>
+        <p class="edu-details"><strong>Coursework:</strong> Distributed Systems, Cloud Computing, iOS Development, Parallel Programming, Full Stack Development</p>
       </section>
 
       <section class="experience-item">
@@ -87,23 +86,23 @@
       </section>
     </section>
 
-    <!-- ── Technical Skills ── -->
+    <!-- Technical Skills -->
     <section id="skills" style="margin-top:64px;">
       <h2 class="section-divider">Technical Skills</h2>
 
       <div class="skills-group">
         <h3>Languages</h3>
         <div class="skills">
-          <span>Python</span><span>Swift (iOS)</span><span>JavaScript / TypeScript</span>
-          <span>Go</span><span>Java</span><span>C++</span><span>SQL</span>
+          <span>Python</span><span>Swift</span><span>JavaScript / TypeScript</span>
+          <span>Go</span><span>Java</span><span>C++</span><span>SQL</span><span>OCaml</span>
         </div>
       </div>
 
       <div class="skills-group" style="margin-top:24px;">
         <h3>Frontend</h3>
         <div class="skills">
-          <span>React</span><span>Next.js</span><span>SwiftUI</span>
-          <span>UIKit</span><span>Tailwind CSS</span><span>HTML5 / CSS3</span>
+          <span>React</span><span>Next.js</span><span>SwiftUI / UIKit</span>
+          <span>Combine</span><span>Tailwind CSS</span><span>HTML5 / CSS3</span>
         </div>
       </div>
 
@@ -111,15 +110,22 @@
         <h3>Backend &amp; Data</h3>
         <div class="skills">
           <span>Node.js</span><span>FastAPI</span><span>PostgreSQL</span>
-          <span>MongoDB</span><span>Redis</span><span>Core Data</span><span>GraphQL</span>
+          <span>MongoDB</span><span>Redis</span><span>GraphQL</span><span>WebSockets</span>
+        </div>
+      </div>
+
+      <div class="skills-group" style="margin-top:24px;">
+        <h3>ML &amp; Data Science</h3>
+        <div class="skills">
+          <span>scikit-learn</span><span>pandas</span><span>NumPy</span>
         </div>
       </div>
 
       <div class="skills-group" style="margin-top:24px;">
         <h3>Infrastructure &amp; Tools</h3>
         <div class="skills">
-          <span>AWS (EC2, Lambda)</span><span>Docker</span><span>Git</span>
-          <span>CI/CD (GitHub Actions)</span><span>Linux / Unix</span>
+          <span>AWS (EC2, Lambda)</span><span>Docker</span><span>Kubernetes</span>
+          <span>Nginx</span><span>Git</span><span>GitHub Actions</span><span>Linux / Unix</span>
         </div>
       </div>
     </section>
