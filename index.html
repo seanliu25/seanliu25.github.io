@@ -1,105 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shangwei Liu | Portfolio</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style-v2.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sean Liu | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="style-v2.css" />
+  <link rel="stylesheet" href="index-fp.css" />
 </head>
 
 <body>
 
-<div class="page-wrapper">
-
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Sean Liu</div>
-
-            <div class="menu-toggle" id="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-
-            <ul class="nav-links" id="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="work-experience.html">Experience</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <header class="hero">
-        <h1>Hello!</h1>
-        <p>
-            My name is Shangwei(Sean) Liu, I am a Master's student at The University of Chicago
-        </p>
-
-        <div class="hero-buttons">
-            <a href="projects.html" class="btn primary">View Projects</a>
-            <a href="contact.html" class="btn secondary">Contact Me</a>
-        </div>
-    </header>
-
-    <div class="container">
-
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I am a developer driven by the intersection of <strong>software engineering</strong> and <strong>intelligent systems</strong>. 
-                With a deep-seated love for <strong>iOS development</strong> and <strong>UI/UX design</strong>, I strive to create 
-                mobile experiences that are not only high-performing but also visually captivating and intuitive for the end-user.
-            </p>
-            <p style="margin-top: 15px;">
-                Beyond building my own platforms, I am an active advocate for collaborative software, having 
-                contributed to several <strong>open-source projects on GitHub</strong>. I believe that the best 
-                code is grown through community and rigorous problem-solving.
-            </p>
-            
-            <div class="hobbies-container" style="margin-top: 25px;">
-                <p style="margin-bottom: 12px; font-weight: 600; color: rgba(255,255,255,0.9);">When I'm not coding, you can find me:</p>
-                <div class="skills">
-                    <span class="hobby-tag">⛷️ Skiing</span>
-                    <span class="hobby-tag">🎾 Tennis</span>
-                    <span class="hobby-tag">⛳ Golf</span>
-                    <span class="hobby-tag">🎬 Movies</span>
-                </div>
-            </div>
-        </section>
-    
-       
+  <!-- ── Sticky nav ── -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Sean Liu</div>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="work-experience.html">Experience</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-</div>
+  </nav>
 
-<footer>
-    <p>&copy; <span id="year"></span> Shangwei Liu. All rights reserved.</p>
-</footer>
+  <!-- ── Side nav dots (circle → pill capsule on hover/active) ── -->
+  <nav class="fp-dots" aria-label="Section navigation">
+    <button class="fp-dot active" data-index="0" aria-label="Hero"></button>
+    <button class="fp-dot"        data-index="1" aria-label="About"></button>
+  </nav>
 
-<script>
-    // Set dynamic year
-    document.getElementById("year").textContent = new Date().getFullYear();
+  <!-- ── Scroll container ── -->
+  <div class="fp-scroll" id="fp-scroll">
 
-    // Navigation toggle logic
-    const toggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
+    <!-- ─ Scene 0: Hero ─ -->
+    <section class="fp-section fp-hero" data-section="0">
 
-    toggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        toggle.classList.toggle('open');
-    });
+      <h1>Hello, I'm Sean</h1>
+      <p>Master's student at The University of Chicago building at the intersection of software engineering and intelligent systems.</p>
+      <div class="hero-buttons">
+        <a href="projects.html" class="btn primary">View Projects</a>
+        <a href="contact.html"  class="btn secondary">Contact Me</a>
+      </div>
 
-    // Close menu when a link is clicked
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            toggle.classList.remove('open');
-        });
-    });
-</script>
+      <!-- Clickable arrow → scrolls to next scene -->
+      <div class="scroll-hint">
+        <button class="scroll-btn" id="scroll-btn" aria-label="Scroll to next section">
+          <span>Scroll</span>
+          <!-- Down arrow SVG (clean, no drift) -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+          </svg>
+        </button>
+      </div>
+
+    </section>
+
+    <!-- ─ Scene 1: About ─ -->
+    <section class="fp-section" data-section="1">
+      <div class="fp-about-inner">
+
+        <!-- Left: bio (delay-0) -->
+        <div class="fp-about-body">
+          <p class="fp-section-label">About Me</p>
+          <h2 class="fp-about-title">Developer.<br>Designer.<br>Builder.</h2>
+          <p>I'm driven by the intersection of <strong>software engineering</strong> and <strong>intelligent systems</strong>. With a deep love for <strong>iOS development</strong> and <strong>UI/UX design</strong>, I strive to create mobile experiences that are high-performing, visually captivating, and intuitive.</p>
+          <p style="margin-top:12px;">I'm an active advocate for collaborative software, having contributed to several <strong>open-source projects on GitHub</strong>. I believe the best code is grown through community and rigorous problem-solving.</p>
+          <div style="margin-top:24px;">
+            <p class="fp-hobbies-label">When I'm not coding</p>
+            <div class="skills" style="margin-top:10px;">
+              <span class="hobby-tag">⛷️ Skiing</span>
+              <span class="hobby-tag">🎾 Tennis</span>
+              <span class="hobby-tag">⛳ Golf</span>
+              <span class="hobby-tag">🎬 Movies</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: quick links (delay-75) -->
+        <div class="fp-about-right">
+          <p class="fp-section-label">Explore</p>
+          <div class="fp-divider"></div>
+          <div class="fp-quick-links">
+            <a href="projects.html" class="fp-quick-link">
+              <span class="fp-quick-link-icon">⚙️</span>
+              <span class="fp-quick-link-text">
+                <span class="fp-quick-link-label">Work</span>
+                <span class="fp-quick-link-title">Featured Projects</span>
+              </span>
+              <span class="fp-quick-link-arrow">→</span>
+            </a>
+            <a href="work-experience.html" class="fp-quick-link">
+              <span class="fp-quick-link-icon">🎓</span>
+              <span class="fp-quick-link-text">
+                <span class="fp-quick-link-label">Journey</span>
+                <span class="fp-quick-link-title">Experience &amp; Education</span>
+              </span>
+              <span class="fp-quick-link-arrow">→</span>
+            </a>
+            <a href="contact.html" class="fp-quick-link">
+              <span class="fp-quick-link-icon">✉️</span>
+              <span class="fp-quick-link-text">
+                <span class="fp-quick-link-label">Connect</span>
+                <span class="fp-quick-link-title">Get In Touch</span>
+              </span>
+              <span class="fp-quick-link-arrow">→</span>
+            </a>
+            <a href="https://github.com/seanliu25" target="_blank" class="fp-quick-link">
+              <span class="fp-quick-link-icon">🐙</span>
+              <span class="fp-quick-link-text">
+                <span class="fp-quick-link-label">Open Source</span>
+                <span class="fp-quick-link-title">GitHub Profile</span>
+              </span>
+              <span class="fp-quick-link-arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- /fp-scroll -->
+
+  <script src="index-fp.js"></script>
 
 </body>
 </html>
