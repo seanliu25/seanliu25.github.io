@@ -138,11 +138,7 @@ document.addEventListener('keydown', e => {
 });
 
 
-// ────────────────────────────────────────────────────
-//  RESIZE HANDLER
-//  If the user rotates or resizes across the breakpoint,
-//  reset scroll position to avoid a broken half-snap state.
-// ────────────────────────────────────────────────────
+
 let lastMobile = isMobile();
 window.addEventListener('resize', () => {
   const nowMobile = isMobile();
