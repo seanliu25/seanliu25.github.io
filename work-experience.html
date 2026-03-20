@@ -34,27 +34,45 @@
 
     <!-- Work Experience -->
     <section id="work">
-      <h2 class="section-divider">Work Experience</h2>
+  <h2 class="section-divider">Work Experience</h2>
 
-      <section class="experience-item">
-        <div class="experience-header">
-          <h2><span class="job-title">Full Stack Software Engineer Intern</span></h2>
-          <h4 class="job-date">Jun 2024 – Aug 2024</h4>
-          <h3 class="company-name">Paranovus Entertainment &nbsp;·&nbsp; Los Angeles, CA</h3>
-        </div>
-        <ul class="experience-list">
-          <li>Developed a modular <strong>RESTful API</strong> architecture using <strong>Next.js 14</strong> server-side handlers, implementing custom middleware for request payload transformation and schema-strict data mapping between the UI and MongoDB.</li>
-          <li>Engineered a secure identity layer using <strong>OAuth 2.0 and JWT</strong>, implementing a <strong>Role-Based Access Control (RBAC)</strong> system to manage session persistence and enforce granular permissioning across internal API routes.</li>
-          <li>Designed a server-side caching strategy using <strong>Redis</strong> with a TTL-based invalidation schema to serve <strong>800 req/sec</strong> from cache, reducing API token overhead by <strong>15%</strong> and eliminating latency for redundant queries.</li>
-          <li>Optimized <strong>MongoDB</strong> data access patterns by analyzing query execution plans; refactored aggregation pipelines and implemented compound indexes to minimize document scans and increase write throughput.</li>
-          <li>Orchestrated containerized environments using <strong>Docker and Docker Compose</strong>, automating deployment workflows via <strong>GitHub Actions</strong> for consistent environment parity and reproducible builds.</li>
-        </ul>
-        <div class="skills" style="margin-top:18px;">
-          <span>Next.js 14</span><span>OAuth 2.0</span><span>JWT</span><span>Redis</span>
-          <span>MongoDB</span><span>Docker</span><span>GitHub Actions</span><span>Tailwind CSS</span>
-        </div>
-      </section>
-    </section>
+  <section class="experience-item">
+    <div class="experience-header">
+      <h2><span class="job-title">Full Stack Software Engineer Intern</span></h2>
+      <h4 class="job-date">Jun 2024 - Aug 2024</h4>
+      <h3 class="company-name">Paranovus Entertainment &nbsp;·&nbsp; Los Angeles, CA</h3>
+    </div>
+    <ul class="experience-list">
+      <li>Developed a modular <strong>RESTful API</strong> architecture using <strong>Next.js 14</strong> server-side handlers, implementing <strong>Zod schema validation</strong> middleware for request payload transformation across <strong>12+ API routes</strong>, reducing malformed request errors by <strong>90%</strong> and enforcing strict type-safe data contracts between UI and <strong>MongoDB</strong>.</li>
+      <li>Engineered a secure identity layer using <strong>OAuth 2.0</strong> and <strong>JWT</strong>, implementing a <strong>Role-Based Access Control (RBAC)</strong> system across <strong>3 permission tiers</strong> (admin, editor, viewer) to manage session persistence and enforce granular route-level authorization, eliminating unauthorized access across all internal API endpoints.</li>
+      <li>Designed a server-side caching strategy using <strong>Redis</strong>, utilizing a key-value schema with <strong>TTL-based invalidation</strong> (verified via <strong>redis-benchmark</strong> at 100-client concurrency), serving <strong>800 req/sec</strong> from cache and reducing <strong>OpenAI GPT-4</strong> token overhead by <strong>15%</strong>.</li>
+      <li>Optimized <strong>MongoDB</strong> query performance by profiling slow queries via <strong>explain("executionStats")</strong> and adding <strong>compound indexes</strong>, converting full collection scans into index-targeted lookups and achieving <strong>3× faster query latency</strong> across collections of <strong>500K+ documents</strong>; containerized full stack via <strong>Docker Compose</strong> with <strong>GitHub Actions CI/CD</strong>, cutting deployment time from <strong>18 → 4 minutes</strong>.</li>
+    </ul>
+    <div class="skills" style="margin-top:18px;">
+      <span>Next.js 14</span><span>OAuth 2.0</span><span>JWT</span><span>Redis</span>
+      <span>MongoDB</span><span>Zod</span><span>Docker</span><span>GitHub Actions</span>
+    </div>
+  </section>
+
+  <section class="experience-item">
+    <div class="experience-header">
+      <h2><span class="job-title">Undergraduate Research Assistant</span></h2>
+      <h4 class="job-date">Sep 2023 - Dec 2023</h4>
+      <h3 class="company-name">Duke University &nbsp;·&nbsp; Durham, NC</h3>
+      <h4 class="job-subtitle">Systems Performance Optimization</h4>
+    </div>
+    <ul class="experience-list">
+      <li>Profiled and optimized an <strong>edge inference pipeline</strong> on <strong>NVIDIA Jetson Orin Nano</strong> using <strong>tegrastats</strong> (100ms intervals, VDD_IN sensor) and <strong>time.perf_counter()</strong> over 1,000 benchmark runs with 50 GPU warmup passes; applied <strong>INT8 quantization</strong> via <strong>TensorRT</strong> to reduce memory bandwidth and arithmetic overhead, improving throughput from <strong>38 → 68 FPS</strong> and cutting power consumption by <strong>3.4W (9.2W → 5.8W)</strong> with only 2.4% accuracy degradation on <strong>COCO val2017</strong>.</li>
+      <li>Designed a <strong>compute caching layer</strong> with <strong>adaptive cache invalidation</strong>, treating CNN feature maps as cacheable compute results and implementing a <strong>motion-score based staleness threshold</strong> (Farneback optical flow magnitude) to dynamically decide cache hits vs. recomputation — high motion triggers <strong>cache eviction</strong>, low motion enables <strong>aggressive reuse</strong>; eliminated <strong>43% of redundant forward passes</strong> while preserving <strong>95.1% baseline accuracy</strong>.</li>
+      <li>Instrumented full pipeline with <strong>concurrent power and latency profiling</strong> (tegrastats + <strong>P99 latency tracking</strong>) across low, medium, and high motion workloads on <strong>COCO</strong> and <strong>MOT17</strong>; validated <strong>8.9ms average inference latency</strong> and established CPU/GPU utilization baselines to identify and eliminate <strong>resource contention bottlenecks</strong>.</li>
+    </ul>
+    <div class="skills" style="margin-top:18px;">
+      <span>TensorRT</span><span>NVIDIA Jetson</span><span>INT8 Quantization</span>
+      <span>YOLOv8</span><span>OpenCV</span><span>CUDA</span><span>Python</span>
+    </div>
+  </section>
+
+</section>
 
     <!-- Education -->
     <section id="education" style="margin-top:64px;">
