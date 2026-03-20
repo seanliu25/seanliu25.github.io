@@ -1,9 +1,16 @@
-
+/* =====================================================
+   index-fp.css  —  Full-page scroll, index.html only
+   Depends on: style-v2.css (glass tokens)
+   ===================================================== */
 
 :root { --nav-h: 64px; }
 
 body { overflow: hidden; }
 
+
+/* =====================================================
+   SCROLL CONTAINER
+   ===================================================== */
 .fp-scroll {
   height: calc(100vh - var(--nav-h));
   overflow-y: scroll;
@@ -15,6 +22,9 @@ body { overflow: hidden; }
 .fp-scroll::-webkit-scrollbar { display: none; }
 
 
+/* =====================================================
+   SECTION BASE
+   ===================================================== */
 .fp-section {
   min-height: calc(100vh - var(--nav-h));
   height:     calc(100vh - var(--nav-h));
@@ -91,7 +101,9 @@ body { overflow: hidden; }
 .fp-hero:hover .hero-buttons { transform: translateY(-3px); }
 
 
-/* SCROLL HINT — hero only, clickable SVG arrow*/
+/* =====================================================
+   SCROLL HINT — hero only, clickable SVG arrow
+   ===================================================== */
 .scroll-hint {
   position: absolute;
   bottom: 36px;
@@ -146,7 +158,9 @@ body { overflow: hidden; }
 }
 
 
-/* SCENE 1 — ABOUT  (glass split-panel)*/
+/* =====================================================
+   SCENE 1 — ABOUT  (glass split-panel)
+   ===================================================== */
 .fp-about-inner {
   width: 100%;
   max-width: 1020px;                      /* ↑ wider panel */
@@ -190,7 +204,7 @@ body { overflow: hidden; }
 }
 
 .fp-about-body p {
-  font-size: 1.02rem;                    
+  font-size: 1.02rem;                     /* ↑ */
   color: var(--text-secondary);
   line-height: 1.78;
   margin-bottom: 14px;
@@ -240,7 +254,7 @@ body { overflow: hidden; }
   align-items: center;
   gap: 14px;
   text-decoration: none;
-  padding: 16px 20px;                    
+  padding: 16px 20px;                     /* ↑ taller rows */
   border-radius: 18px;
   background: rgba(255,255,255,0.38);
   background-image: linear-gradient(to bottom, rgba(255,255,255,0.30), transparent);
@@ -268,7 +282,9 @@ body { overflow: hidden; }
 .fp-quick-link:hover .fp-quick-link-arrow { transform: translateX(5px); }
 
 
-/* SIDE NAV DOTS  (circle → capsule)*/
+/* =====================================================
+   SIDE NAV DOTS  (circle → capsule)
+   ===================================================== */
 .fp-dots {
   position: fixed;
   right: 28px;
@@ -299,12 +315,14 @@ body { overflow: hidden; }
 }
 
 
-/* SCENE 2 — HOBBIES BENTO GRID*/
+/* =====================================================
+   SCENE 2 — HOBBIES BENTO GRID
+   ===================================================== */
 .fp-hobbies-scene { align-items: center; }
 
 .fp-hobbies-wrap {
   width: 100%;
-  max-width: 1020px;                    
+  max-width: 1020px;                      /* ↑ matches about panel */
   display: grid;
   grid-template-columns: 150px 1fr;
   gap: 32px 52px;
@@ -316,7 +334,7 @@ body { overflow: hidden; }
 
 .fp-hobbies-title {
   font-family: 'DM Serif Display', Georgia, serif;
-  font-size: clamp(1.9rem, 3vw, 2.6rem);  
+  font-size: clamp(1.9rem, 3vw, 2.6rem);  /* ↑ */
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -329,8 +347,8 @@ body { overflow: hidden; }
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 14px;
-  height: calc(100vh - var(--nav-h) - 100px); 
-  max-height: 500px;                     
+  height: calc(100vh - var(--nav-h) - 100px); /* ↑ taller grid */
+  max-height: 500px;                      /* ↑ */
   transition: transform 600ms 75ms var(--spring);
 }
 .fp-hobbies-scene:hover .fp-bento { transform: translateY(-3px); }
@@ -389,14 +407,16 @@ body { overflow: hidden; }
 .fp-hobby-card--movies .fp-hobby-img-placeholder { background: linear-gradient(135deg, rgba(200,100,255,0.20), rgba(100,100,255,0.12)); }
 
 
-/* SCENE 3 — TRAVEL GALLERY*/
+/* =====================================================
+   SCENE 3 — TRAVEL GALLERY
+   ===================================================== */
 .fp-travel-scene { align-items: center; }
 
 .fp-travel-wrap {
   width: 100%;
-  max-width: 1020px;                    
+  max-width: 1020px;                      /* ↑ */
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 300px 1fr;       /* ↑ wider copy column */
   gap: 52px;
   align-items: center;
 }
@@ -406,7 +426,7 @@ body { overflow: hidden; }
 
 .fp-travel-title {
   font-family: 'DM Serif Display', Georgia, serif;
-  font-size: clamp(2.4rem, 3.4vw, 3.2rem); 
+  font-size: clamp(2.4rem, 3.4vw, 3.2rem); /* ↑ */
   font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1.08;
@@ -415,7 +435,7 @@ body { overflow: hidden; }
 }
 
 .fp-travel-desc {
-  font-size: 1.0rem;                     
+  font-size: 1.0rem;                      /* ↑ */
   color: var(--text-secondary);
   line-height: 1.75;
 }
@@ -427,7 +447,7 @@ body { overflow: hidden; }
 .fp-stat { display: flex; flex-direction: column; gap: 3px; }
 .fp-stat-num {
   font-family: 'DM Serif Display', Georgia, serif;
-  font-size: 2rem;                       
+  font-size: 2rem;                        /* ↑ */
   font-weight: 400; color: var(--accent); line-height: 1;
 }
 .fp-stat-label {
@@ -441,7 +461,7 @@ body { overflow: hidden; }
   grid-template-rows: 1fr 1fr;
   gap: 12px;
   height: calc(100vh - var(--nav-h) - 80px);
-  max-height: 500px;                     
+  max-height: 500px;                      /* ↑ */
   transition: transform 600ms 75ms var(--spring);
 }
 .fp-travel-scene:hover .fp-travel-mosaic { transform: translateY(-3px); }
@@ -473,28 +493,113 @@ body { overflow: hidden; }
 .fp-photo:has(img) .fp-photo-placeholder { display: none; }
 
 
-/* MOBILE */
+/* =====================================================
+   MOBILE  (≤ 768px)
+
+   Strategy: abandon fixed-height snap scroll on mobile.
+   Each section becomes height:auto so content never clips.
+   The outer .fp-scroll becomes a normal scrolling column.
+   Dots stay fixed but use IntersectionObserver (in JS).
+   ===================================================== */
 @media (max-width: 768px) {
   :root { --nav-h: 60px; }
 
-  .fp-section { padding: 0 20px; }
-  .fp-hero h1 { font-size: clamp(2.6rem, 11vw, 3.4rem); }
-  .fp-hero p  { font-size: 1.1rem; }
+  /* ── Unlock body & container ── */
+  body { overflow: auto; }
 
-  .fp-about-inner {
-    grid-template-columns: 1fr; gap: 28px; padding: 36px 24px; border-radius: 28px;
-    max-height: calc(100vh - var(--nav-h) - 20px); overflow-y: auto; scrollbar-width: none;
+  .fp-scroll {
+    height: auto;
+    overflow-y: visible;          /* let body handle scroll */
+    scroll-snap-type: none;       /* disable snap — content is too tall */
   }
-  .fp-about-inner::-webkit-scrollbar { display: none; }
-  .fp-about-title { font-size: clamp(2rem, 7vw, 2.6rem); }
 
-  .fp-hobbies-wrap { grid-template-columns: 1fr; gap: 16px; }
-  .fp-bento { grid-template-columns: repeat(2,1fr); grid-template-rows: auto; max-height: none; height: auto; }
-  .fp-hobby-card--wide { grid-column: span 2; }
+  /* ── Each section: natural height, generous padding ── */
+  .fp-section {
+    height: auto;
+    min-height: 100svh;           /* try to fill screen but don't clip */
+    padding: 56px 20px 64px;
+    align-items: flex-start;      /* top-align so content isn't cut */
+    overflow: visible;
+  }
 
-  .fp-travel-wrap { grid-template-columns: 1fr; gap: 20px; }
-  .fp-travel-mosaic { grid-template-columns: 1fr 1fr; max-height: 280px; height: 280px; }
+  /* Hero can stay centered */
+  .fp-hero { align-items: center; }
+
+  /* ── Hero typography ── */
+  .fp-hero h1 { font-size: clamp(2.4rem, 10vw, 3.2rem); margin-bottom: 20px; }
+  .fp-hero p  { font-size: 1.05rem; margin-bottom: 36px; }
+
+  /* ── Scroll hint: keep it but smaller ── */
+  .scroll-hint { bottom: 24px; }
+
+  /* ── About panel: single column, natural height ── */
+  .fp-about-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 36px 24px 40px;
+    border-radius: 28px;
+    max-height: none;             /* ← remove the clipping max-height */
+    overflow-y: visible;          /* ← never hide content */
+    width: 100%;
+  }
+  .fp-about-title { font-size: clamp(2rem, 8vw, 2.6rem); }
+  .fp-about-body p { font-size: 0.97rem; }
+
+  /* Remove parallax lift on mobile (causes layout shift) */
+  .fp-section:hover .fp-about-body,
+  .fp-section:hover .fp-about-right { transform: none; }
+
+  /* ── Hobbies ── */
+  .fp-hobbies-wrap {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+  .fp-hobbies-header { width: 100%; }
+  .fp-hobbies-title  { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+
+  .fp-bento {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    height: auto;
+    max-height: none;
+    gap: 10px;
+  }
+  /* On mobile travel card takes full width */
+  .fp-hobby-card--wide { grid-column: 1 / -1; }
+
+  /* Give bento cards a sensible fixed height so images show */
+  .fp-hobby-card { min-height: 160px; }
+  .fp-hobby-card--wide { min-height: 140px; }
+  .fp-hobby-img-placeholder { min-height: 80px; font-size: 1.8rem; }
+
+  /* Remove hover parallax on bento */
+  .fp-hobbies-scene:hover .fp-hobbies-header,
+  .fp-hobbies-scene:hover .fp-bento { transform: none; }
+
+  /* ── Travel ── */
+  .fp-travel-wrap {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .fp-travel-title { font-size: clamp(2rem, 8vw, 2.6rem); }
+  .fp-travel-desc  { font-size: 0.97rem; }
+  .fp-stat-num     { font-size: 1.6rem; }
+
+  .fp-travel-mosaic {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 160px 160px;
+    height: auto;
+    max-height: none;
+    gap: 10px;
+  }
+  /* Tall photo becomes normal on mobile */
   .fp-photo--tall { grid-row: span 1; }
 
-  .fp-dots { right: 12px; }
+  /* Remove mosaic parallax */
+  .fp-travel-scene:hover .fp-travel-copy,
+  .fp-travel-scene:hover .fp-travel-mosaic { transform: none; }
+
+  /* ── Side dots: hide on mobile (content no longer snap-scrolls) ── */
+  .fp-dots { display: none; }
 }
